@@ -1,0 +1,49 @@
+body {
+  background: #fff;
+}
+.YLT-header {
+  position: static;
+  box-shadow: inset 0px -2px 0px 0px #F2F3F5;
+}
+.YLT-header .pageTitle {
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+.YLT-body {
+  padding: 0 !important;
+}
+.YLT-body .btn {
+  font-size: 14px;
+}
+.YLT-body .wide-block {
+  border: none;
+}
+.YLT-body .login-introduce {
+  color: #F5A623;
+}
+.YLT-body .form-group .label {
+  font-size: 1rem;
+}
+.YLT-body .was-validated .custom-control-input:valid ~ .custom-control-label {
+  color: #141515;
+}
+.YLT-body .was-validated .form-control:valid {
+  border-color: #1E74FD;
+}
+.YLT-body .needs-validation.was-validated .form-group.boxed .clear-input {
+  bottom: 0;
+}
+.YLT-body .was-validated .form-control:invalid ~ .clear-input {
+  bottom: 20px !important;
+}
+.YLT-body .error-page {
+  max-width: none;
+}
+.YLT-body .error-page .icon-box {
+  width: 86px;
+  height: 86px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
