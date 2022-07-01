@@ -5,10 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-
-
-
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
     <title>Mobilekit Mobile UI Kit</title>
+    <meta name="description" content="Mobilekit HTML Mobile UI Kit">
+    <meta name="keywords" content="bootstrap 4, mobile template, cordova, phonegap, mobile, html" />
 
     <link rel="stylesheet" href="assets/css/inc/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -16,10 +18,6 @@
 </head>
 
 <body>
-    <!-- loader -->
-    <div id="loader">
-        <div class="spinner-border text-primary" role="status"></div>
-    </div><!-- * loader -->
     <!-- App Header -->
     <div class="appHeader YLT-header">
         <div class="pageTitle">提交成功</div>
@@ -27,15 +25,14 @@
     <!-- * App Header -->
     <!-- App Capsule -->
     <div id="appCapsule" class="YLT-body">
-        <div class="full wide-block">
+        <div class="wide-block">
             <div class="error-page">
-                <div class="icon-box bg-success">
-                    <ion-icon name="checkmark-outline" role="img" class="md hydrated" aria-label="checkmark outline">
+                <div class="icon-box text-success">
+                    <ion-icon name="checkmark-circle" role="img" class="md hydrated" aria-label="checkmark circle">
                     </ion-icon>
                 </div>
                 <div class="title">注册成功</div>
-                <div class="text mb-5">请登录<a href="">http://irbunion.cbiita.com/</a>获得更多内容</div>
-
+                <div class="text">请登录<a href="">http://irbunion.cbiita.com/</a>获得更多内容</div>
             </div>
         </div>
 
@@ -45,14 +42,22 @@
 
     <!-- ///////////// Js Files //////////////////// -->
     <!-- Jquery -->
-    <script src="assets/js/lib/jquery-3.4.1.min.js"></script><!-- Bootstrap-->
-    <script src="assets/js/lib/popper.min.js"></script>
-    <script src="assets/js/lib/bootstrap.min.js"></script><!-- Ionicons -->
-    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script><!-- Bootstrap-->
+    <script type="text/javascript" src="assets/js/lib/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/bootstrap.min.js"></script><!-- Ionicons -->
+    <script type="text/javascript" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
     <!-- Owl Carousel -->
-    <script src="assets/js/plugins/owl-carousel/owl.carousel.min.js"></script><!-- jQuery Circle Progress -->
-    <script src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script><!-- Base Js File -->
-    <script src="assets/js/base.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <!-- jQuery Circle Progress -->
+    <script type="text/javascript" src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
+    <!-- Base Js File -->
+    <script type="text/javascript" src="assets/js/base.js"></script>
+    <!-- city -->
+    <script type="text/javascript" src="assets/js/lib/picker.min.js"></script>
+    <script type="text/javascript" src="assets/js/city/city.js"></script>
+    <script type="text/javascript" src="assets/js/city/index.js"></script>
+    <!-- 滑动校验 -->
+    <script type="text/javascript" src="assets/js/lib/ft-slider.min.js"></script>
 
 </body>
 

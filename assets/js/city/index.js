@@ -103,10 +103,12 @@ picker.on('picker.valuechange', function (selectedVal, selectedIndex) {
   // console.log(selectedVal);
   // console.log(selectedIndex);
 });
+if(nameEl){
+  nameEl.addEventListener('click', function () {
+    picker.show();
+  });
+}
 
-nameEl.addEventListener('click', function () {
-	picker.show();
-});
 
 
 

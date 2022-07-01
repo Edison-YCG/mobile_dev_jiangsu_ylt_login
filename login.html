@@ -5,10 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-
-
-
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
     <title>Mobilekit Mobile UI Kit</title>
+    <meta name="description" content="Mobilekit HTML Mobile UI Kit">
+    <meta name="keywords" content="bootstrap 4, mobile template, cordova, phonegap, mobile, html" />
 
     <link rel="stylesheet" href="assets/css/inc/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -16,10 +18,6 @@
 </head>
 
 <body>
-    <!-- loader -->
-    <div id="loader">
-        <div class="spinner-border text-primary" role="status"></div>
-    </div><!-- * loader -->
     <!-- App Header -->
     <div class="appHeader YLT-header">
         <div class="pageTitle">注册</div>
@@ -88,8 +86,8 @@
                     <div class="form-group boxed">
                         <div class="input-wrapper"><label class="label" for="city5"><span
                                     class="text-danger">*</span>所在省市</label>
-                            <input type="text" autocomplete="off" class="form-control" id="YLT-form-city" placeholder="请选择" required=""><i
-                                class="clear-input">
+                            <input type="text" autocomplete="off" class="form-control" id="YLT-form-city"
+                                placeholder="请选择" required=""><i class="clear-input">
                                 <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle">
                                 </ion-icon>
                             </i>
@@ -113,7 +111,8 @@
                             <div class="row ml-0 mr-0">
                                 <input type="text" class="form-control col-7" id="name5" placeholder="请输入" required="">
 
-                                <button type="button" class="btn btn-primary ml-3 col-4">获取验证码</button></div>
+                                <button type="button" class="btn btn-primary ml-3 col-4" data-toggle="modal"
+                                    data-target="#verificationModal">获取验证码</button></div>
 
                         </div>
                     </div>
@@ -152,27 +151,46 @@
 
 
 
-
+        <div class="modal fade dialogbox" id="verificationModal" data-backdrop="static" tabindex="-1" role="dialog"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">机器人验证</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div id="slider-check"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-inline"><a href="#" class="btn" data-dismiss="modal">关闭</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div><!-- * App Capsule -->
 
     <!-- ///////////// Js Files //////////////////// -->
     <!-- Jquery -->
-    <script src="assets/js/lib/jquery-3.4.1.min.js"></script><!-- Bootstrap-->
-    <script src="assets/js/lib/popper.min.js"></script>
-    <script src="assets/js/lib/bootstrap.min.js"></script><!-- Ionicons -->
-    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery-3.4.1.min.js"></script><!-- Bootstrap-->
+    <script type="text/javascript" src="assets/js/lib/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/bootstrap.min.js"></script><!-- Ionicons -->
+    <script type="text/javascript" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
     <!-- Owl Carousel -->
-    <script src="assets/js/plugins/owl-carousel/owl.carousel.min.js"></script><!-- jQuery Circle Progress -->
-    <script src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script><!-- Base Js File -->
-    <script src="assets/js/base.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <!-- jQuery Circle Progress -->
+    <script type="text/javascript" src="assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
+    <!-- Base Js File -->
+    <script type="text/javascript" src="assets/js/base.js"></script>
     <!-- city -->
-    <script src="scripts/picker.min.js"></script>
-    <script type="text/javascript" src="city/city.js"></script>
-    <script type="text/javascript" src="city/index.js"></script>
+    <script type="text/javascript" src="assets/js/lib/picker.min.js"></script>
+    <script type="text/javascript" src="assets/js/city/city.js"></script>
+    <script type="text/javascript" src="assets/js/city/index.js"></script>
+    <!-- 滑动校验 -->
+    <script type="text/javascript" src="assets/js/lib/ft-slider.min.js"></script>
     <script>
         (function () {
-            'use strict';
+
             window.addEventListener('load', function () {
                 var forms = document.getElementsByClassName(
                     'needs-validation'); // Loop over them and prevent submission 
@@ -186,6 +204,26 @@
                     }, false)
                 })
             }, false)
+
+            // 机器人验证
+            var sliderCheck = null
+            $('#verificationModal').on('shown.bs.modal', function (e) {
+                sliderCheck = new FtSlider({
+                    id: "slider-check",
+                    width: "100%",
+                    height: "100%",
+                    callback: function (res) {
+                        if (res === true) {
+                            $('#verificationModal').modal('hide')
+                        }
+                    }
+                })
+            });
+
+            $('#verificationModal').on('hidden.bs.modal', function (e) {
+                sliderCheck.restore();
+            })
+
         })();
     </script>
 </body>
