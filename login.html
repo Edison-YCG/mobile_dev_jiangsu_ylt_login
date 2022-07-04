@@ -96,7 +96,7 @@
                     <div class="form-group boxed">
                         <div class="input-wrapper"><label class="label" for="name5">
                                 <span class="text-danger">*</span>手机号</label>
-                            <input type="text" class="form-control" id="name5" placeholder="请输入" required="">
+                            <input type="text" class="form-control" id="mobile-phone" placeholder="请输入" required="">
                             <i class="clear-input">
                                 <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle">
                                 </ion-icon>
@@ -189,10 +189,22 @@
                 var validation = Array.prototype.filter.call(forms, function (form) {
                     form.addEventListener('submit', function (event) {
                         if (form.checkValidity() === false) {
-                            event.preventDefault();
+                            event.preventDefault()
                             event.stopPropagation()
                         }
                         form.classList.add('was-validated')
+
+                        var phone = $('#mobile-phone').val()
+                        // 电话包括移动 联通  电信
+                        var myreg =
+                            /^(((13[0-9]{1})|(14[0-9]{1})|(17[0]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                        var message = ""
+                        if (phone.length != 11 || myreg.test(phone)) {
+                            $('#mobile-phone').addClass('is-invalid')
+                        } else {
+                            $('#mobile-phone').removeClass('is-invalid')
+                        }
+
                     }, false)
                 })
             }, false)
