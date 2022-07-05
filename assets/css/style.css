@@ -4526,7 +4526,7 @@ textarea,
 }
 
 .custom-control .custom-control-label {
-    padding-left: 10px;
+    padding-left: 0px;
     padding-top: 2px;
     color: #141515
 }
